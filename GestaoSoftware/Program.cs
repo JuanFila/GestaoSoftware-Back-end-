@@ -7,7 +7,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 var jwtKey =
-    builder.Configuration["JwtKey"] ??
+    builder.Configuration["JwtKey"] ??                
     Environment.GetEnvironmentVariable("JWT_SECRET");
 
 if (string.IsNullOrWhiteSpace(jwtKey))
