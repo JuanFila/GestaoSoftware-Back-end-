@@ -6,7 +6,14 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtKey"]);
+var jwtKey =
+    builder.Configuration["JwtKey"] ??
+    Environment.GetEnvironmentVariable("JWT_SECRET");
+
+if (string.IsNullOrWhiteSpace(jwtKey))
+    throw new Exception("JWT_SECRET não configurada");
+
+var key = Encoding.ASCII.GetBytes(jwtKey);
 
 builder.Services.AddAuthentication(options =>
 {

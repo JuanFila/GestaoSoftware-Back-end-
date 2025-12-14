@@ -16,6 +16,8 @@ services:
       - db
     ports:
       - "8080:80"
+    env_file:
+      - .env
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=gestaosoftware;Username=postgres;Password=postgres
 
