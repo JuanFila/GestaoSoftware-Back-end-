@@ -7,7 +7,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia apenas o projeto para restaurar dependências
+# Copia apenas o .csproj para restaurar dependências
 COPY ["GestaoSoftware.csproj", "./"]
 RUN dotnet restore "GestaoSoftware.csproj"
 
@@ -22,8 +22,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Define variável de ambiente para o ASP.NET
 ENV ASPNETCORE_URLS=http://+:80
-
-# Start da aplicação
 ENTRYPOINT ["dotnet", "GestaoSoftware.dll"]
