@@ -1,0 +1,435 @@
+{
+    "info": {
+        "name": "Testes",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "SoftwareGestão",
+            "description": "",
+            "item": [
+                {
+                    "name": "User",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "Login",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"email\": \"Admin@gmail.com\",\r\n  \"password\": \"admin\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/api/Auth/login",
+                                    "path": [
+                                        "api",
+                                        "Auth",
+                                        "login"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Cadastro User",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"name\": \"Admin\",\r\n  \"email\": \"Admin@gmail.com\",\r\n  \"password\": \"admin\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/api/users",
+                                    "path": [
+                                        "api",
+                                        "users"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "Software",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "Post Software",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwiZW1haWwiOiJqdWFuQGVtYWkuY29tIiwibmJmIjoxNzY1NzMzMzIzLCJleHAiOjE3NjU3NDA1MjMsImlhdCI6MTc2NTczMzMyM30.gipPASlLTq_DWxhyudpuwmuO1BjXs4lx1ampY99hIJg",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"name\": \"Docker\",\r\n  \"status\": \"Ativo\",\r\n  \"observation\": \"Um bom software para rodar seus projetos em containers\",\r\n  \"versions\": [\r\n    {\r\n      \"versionNumber\": \"1\",\r\n      \"releaseDate\": \"2025-12-14T15:43:34.303Z\",\r\n      \"isDeprecated\": false\r\n    }\r\n  ]\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/api/Softwares",
+                                    "path": [
+                                        "api",
+                                        "Softwares"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Listar",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwiZW1haWwiOiJqdWFuQGVtYWkuY29tIiwibmJmIjoxNzY1NzMzMzIzLCJleHAiOjE3NjU3NDA1MjMsImlhdCI6MTc2NTczMzMyM30.gipPASlLTq_DWxhyudpuwmuO1BjXs4lx1ampY99hIJg",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/api/Softwares",
+                                    "path": [
+                                        "api",
+                                        "Softwares"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Cancelar",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwiZW1haWwiOiJqdWFuQGVtYWkuY29tIiwibmJmIjoxNzY1NzMzMzIzLCJleHAiOjE3NjU3NDA1MjMsImlhdCI6MTc2NTczMzMyM30.gipPASlLTq_DWxhyudpuwmuO1BjXs4lx1ampY99hIJg",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/api/Softwares/1/cancel",
+                                    "path": [
+                                        "api",
+                                        "Softwares",
+                                        "1",
+                                        "cancel"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Depricated",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwiZW1haWwiOiJqdWFuQGVtYWkuY29tIiwibmJmIjoxNzY1NzMzMzIzLCJleHAiOjE3NjU3NDA1MjMsImlhdCI6MTc2NTczMzMyM30.gipPASlLTq_DWxhyudpuwmuO1BjXs4lx1ampY99hIJg",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"isDeprecated\": true\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/softwares/:1/Versions/:1/deprecated",
+                                    "path": [
+                                        "api",
+                                        "softwares",
+                                        ":1",
+                                        "Versions",
+                                        ":1",
+                                        "deprecated"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "1",
+                                            "description": "",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "key": "1",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Nova versão",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyIiwiZW1haWwiOiJBZG1pbkBnbWFpbC5jb20iLCJuYmYiOjE3NjU3NDU3MDgsImV4cCI6MTc2NTc1MjkwOCwiaWF0IjoxNzY1NzQ1NzA4fQ.08wUY5nkfCiOPM_L02FbcCJOaGryvXD5HnzYK_dPM-U",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"versionNumber\": \"2\",\r\n  \"releaseDate\": \"2025-12-14T17:52:30.159Z\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/softwares/3/versions",
+                                    "path": [
+                                        "api",
+                                        "softwares",
+                                        "3",
+                                        "versions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "Editar Software",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/softwares/3",
+                                    "path": [
+                                        "api",
+                                        "softwares",
+                                        "3"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "auth": {}
+        }
+    ],
+    "variable": [],
+    "event": [],
+    "auth": {}
+}
