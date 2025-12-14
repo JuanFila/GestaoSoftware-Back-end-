@@ -1,0 +1,40 @@
+# =========================
+# Visual Studio / .NET
+# =========================
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.cache
+*.log
+
+# =========================
+# VS Code / Rider
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Node (se usar front junto)
+# =========================
+node_modules/
+npm-debug.log*
+
+# =========================
+# Environment files
+# =========================
+.env
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
