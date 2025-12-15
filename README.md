@@ -27,20 +27,18 @@ GestaoSoftware é uma API para gerenciamento de softwares e seus processos, perm
 
 ---
 
-## Start projeto
-
-GestaoSoftware docker compose up --build
-
-## Link de acesso para o swagger
-
-Obs: Link disponível somente ao rodar o projeto
-http://localhost:8080/swagger/index.html
-
 ## Pré-requisitos
 
 - Docker e Docker Compose
 - .NET 8 SDK (opcional, se quiser rodar local sem Docker)
 - Postman (para testar os endpoints)
 
+---
 
-## Use o arquivo Testes.postman.json no postman para importar os end-point
+## Passo a passo para rodar o projeto
+
+### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/JuanFila/GestaoSoftware-Back-end-.git
+cd GestaoSoftware
